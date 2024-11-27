@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behailu's Digital Solutions</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+            background: linear-gradient(120deg, #4caf50, #8bc34a, #ffeb3b);
+            animation: gradientBG 10s infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .left-section {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .left-section img {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .right-section {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .right-section h1 {
+            color: #1a72c4;
+            font-size: 2.5em;
+        }
+
+        .right-section p {
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .services h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .services ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .services ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Popup Styles */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            z-index: 1000;
+            width: 300px;
+            text-align: center;
+        }
+
+        #popup h3 {
+            margin: 0 0 10px;
+            color: #4caf50;
+        }
+
+        #popup input,
+        #popup button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #popup button {
+            background: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #popup button:hover {
+            background: #388e3c;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Behailu's Digital Solutions</h1>
+        <p>Turning Ideas into Results | Expert in Facebook Ads & Digital Marketing</p>
+    </header>
+    <div class="container">
+        <div class="left-section">
+            <img src="https://assets.onecompiler.app/42zamauss/42zam8utu/4J9A7335.JPG" alt="Behailu's Profile">
+        </div>
+        <div class="right-section">
+            <h1>Welcome to My Digital Solutions Hub</h1>
+            <p>
+                Hello, I'm <b>Behailu</b>a certified <strong>Digital Marketing Specialist</strong> with expertise in 
+                Facebook Ads Management, Social Media Strategies, and Creative Video Editing. 
+                I help businesses stand out and generate growth in industries like <strong><b>real estate</b></strong>,AND <strong>e-commerce</strong>.
+            </p>
+            <div class="services">
+                <h2>What I Offer</h2>
+                <ul>
+                    <li><strong>Facebook Ads Campaigns:</strong> Targeted ads that drive sales and engagement.</li>
+                    <li><strong>Social Media Management:</strong> Boost your online presence with customized strategies.</li>
+                    <li><strong>YouTube Video Editing:</strong> Professional video content to attract your audience.</li>
+                    <li><strong>Graphic Design:</strong> Create stunning visuals that reflect your brand.</li>
+                </ul>
+            </div>
+            <p>Let me help you achieve your goals. Success starts here!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact me at: <a href="mailto:behailugezahegn1@gmail.com">behailugezahegn1@gmail.com</a></p>
+        <p>© 2024 Behailu's Digital Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Popup -->
+    <div id="overlay"></div>
+    <div id="popup">
+        <h3>Contact Me</h3>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" style="resize: none;"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        // Show popup after 10 seconds
+        setTimeout(() => {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }, 10000);
+
+        // Close popup function
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
