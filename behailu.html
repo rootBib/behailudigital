@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             color: #222;
-            background: linear-gradient(120deg, #4caf50, #8bc34a, #ffeb3b);
+            background: linear-gradient(120deg, #4c7daf, #2be0e0, #bdd2de);
             animation: gradientBG 10s infinite;
         }
 
@@ -55,7 +55,7 @@
         }
 
         .right-section h1 {
-            color: #1a72c4;
+            color: #ffffff;
             font-size: 2.5em;
         }
 
@@ -119,7 +119,8 @@
         }
 
         #popup input,
-        #popup button {
+        #popup button,
+        #popup textarea {
             width: 90%;
             padding: 10px;
             margin: 10px 0;
@@ -162,9 +163,9 @@
         <div class="right-section">
             <h1>Welcome to My Digital Solutions Hub</h1>
             <p>
-                Hello, I'm <b>Behailu</b>a certified <strong>Digital Marketing Specialist</strong> with expertise in 
+                Hi, I'm Behailu—a certified <strong>Digital Marketing Specialist</strong>with expertise in 
                 Facebook Ads Management, Social Media Strategies, and Creative Video Editing. 
-                I help businesses stand out and generate growth in industries like <strong><b>real estate</b></strong>,AND <strong>e-commerce</strong>.
+                I help businesses stand out and generate growth in industries like <strong>Restaurant </strong> <strong>real estate</strong>,and <strong> e-commerce</strong>.
             </p>
             <div class="services">
                 <h2>What I Offer</h2>
@@ -188,10 +189,10 @@
     <div id="overlay"></div>
     <div id="popup">
         <h3>Contact Me</h3>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="4" style="resize: none;"></textarea>
+        <form action="contact.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" style="resize: none;" required></textarea>
             <button type="submit">Send Message</button>
         </form>
         <button onclick="closePopup()">Close</button>
